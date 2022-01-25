@@ -1,6 +1,6 @@
+import 'package:ecomm/Widgets/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
 
@@ -13,9 +13,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(systemNavigationBarColor: Colors.white));
     return Scaffold(
-      body: Container(
-        child: Center(child: Text("Hello"),),
-      ),
-    );
+      body: Model3d(uri : "Assets/models/Astronaut/Astronaut.obj"),
+      );
   }
 }
