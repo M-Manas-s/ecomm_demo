@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   String email = " ";
   String password = " ";
   bool state = true;
-  FirebaseAuthentication _firebaseAuthentication = FirebaseAuthentication();
+  final FirebaseAuthentication _firebaseAuthentication = FirebaseAuthentication();
 
   @override
   void initState() {

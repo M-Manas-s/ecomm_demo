@@ -1,6 +1,5 @@
 name: ecomm
 description: A new Flutter project.
-
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -40,6 +39,8 @@ dependencies:
   firebase_auth: ^3.3.6
   cloud_firestore: ^3.1.7
   provider: ^6.0.2
+  shared_preferences: ^2.0.12
+
 
 dev_dependencies:
   flutter_test:

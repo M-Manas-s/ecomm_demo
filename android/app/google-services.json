@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "546777908948",
+    "project_id": "hcflutter-b5463",
+    "storage_bucket": "hcflutter-b5463.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546777908948:android:7032b84831b8e9f89c9d41",
+        "android_client_info": {
+          "package_name": "com.example.ecomm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546777908948-cadqive4l4u94g7vgfr2ht0cmes2c14g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtAxOa3MeNtgU_QwmxIq3fo39Rp8qr3D8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546777908948-cadqive4l4u94g7vgfr2ht0cmes2c14g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
