@@ -1,6 +1,6 @@
 import 'package:ecomm/Constants/constants.dart';
 import 'package:ecomm/Constants/regex_validators.dart';
-import 'package:ecomm/Screens/regiser_page.dart';
+import 'package:ecomm/Screens/sign_in_page.dart';
 import 'package:ecomm/Services/authentication.dart';
 import 'package:ecomm/Widgets/authentication_button.dart';
 import 'package:flutter/material.dart';
@@ -8,14 +8,14 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   late GlobalKey<FormState> _formKey;
   String email = " ";
   String password = " ";
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                             height: size.height * 0.01,
                           ),
                           Text(
-                            "Sign In",
+                            "Sign Up",
                             style: kStandardWhiteBold,
                           ),
                           SizedBox(
@@ -78,11 +78,11 @@ class _LoginPageState extends State<LoginPage> {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: size.width * 0.08),
                             child: AuthenticationButton(
-                                label: 'Sign In',
+                                label: 'Sign Up',
                                 color: Color(0xff2B2439),
                                 onPressed: () => () {
                                       Future.delayed(Duration(seconds: 0), () {
-                                        _firebaseAuthentication.SignIn(context: context, formKey: _formKey, email: email, password: password);
+                                        _firebaseAuthentication.SignUp(context: context, formKey: _formKey, email: email, password: password);
                                       });
                                     },
                                 height: size.height * 0.07),
@@ -92,19 +92,26 @@ class _LoginPageState extends State<LoginPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Don't have an account?",
-                            style: kStandardWhiteBold.copyWith(color: Color(0xff7F8EA7), fontSize: 17),
-                          ),
+                          
+                            Text("Already have an account?",
+                            style: kStandardWhiteBold.copyWith(color: Color(0xff7F8EA7), fontSize: 17)),
+                           
+                          
                           SizedBox(height: size.height*0.015,),
                           Row(
                             children: [
                               TextButton(
-                                child : Text("Sign up ",
-                                style: kStandardWhiteBold.copyWith(fontSize: 17)),
-                                onPressed: () =>  Navigator.pushAndRemoveUntil(
-                            context, MaterialPageRoute(builder: (context) => RegisterPage()), (
-                          route) => false),
+                                child: Text(
+                                  "Sign in ",
+                                  style: kStandardWhiteBold.copyWith(fontSize: 17),
+                                ),
+                                onPressed: () => {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => LoginPage()),
+                                  )
+                                },
+                                
                               ),
                               Icon(
                                 Icons.navigate_next,

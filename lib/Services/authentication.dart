@@ -40,4 +40,26 @@ class FirebaseAuthentication {
       }
     }
   }
+  Future SignUp(
+      {required BuildContext context,
+      required GlobalKey<FormState> formKey,
+      required String email,
+      required String password}) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (formKey.currentState!.validate()) {
+      try {
+        var authUser = await auth.createUserWithEmailAndPassword(
+            email: email, password: password);
+          if(authUser != null){
+            Navigator.pushAndRemoveUntil(context,
+                DashboardRoute(builder: (_) => LandingPage()), (r) => false);
+          }
+      }
+      on Exception {
+        log("wrong id/pass");
+        // TODO : Handle Wrong ID/PASS
+
+      }
+    }
+}
 }
